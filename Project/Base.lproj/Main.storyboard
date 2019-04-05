@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yzq-Pr-M6F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7W2-Lc-g83">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,7 +45,6 @@
         <!--Favourites View Controller-->
         <scene sceneID="DM2-be-S8U">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5vI-lL-Pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BXn-N7-Sxm" userLabel="Favourites View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcr-Sm-Goi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -55,13 +54,33 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Feed" id="129-59-pbm"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vI-lL-Pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="745" y="-1219"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R2g-Bp-eVn">
+            <objects>
+                <navigationController id="7W2-Lc-g83" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRh-Sj-DXj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yzq-Pr-M6F" kind="relationship" relationship="rootViewController" id="UmA-WW-u6P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOV-Z8-H2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1123" y="-162"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J3p-NJ-81P">
             <objects>
                 <tabBarController id="yzq-Pr-M6F" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OBj-UB-W1n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dNc-4i-p7A"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iG7-Dz-ruJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
