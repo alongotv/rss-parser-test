@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		0D77EB65933572C2D60A993E /* Pods_rss_parser_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAF96E30EA5CB7B5AEEE07 /* Pods_rss_parser_test.framework */; };
 		2E9281E441847B30D4DCFC72 /* Pods_rss_parser_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E0488087E111386125D40F /* Pods_rss_parser_testUITests.framework */; };
+		E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECA2257ACE900D0899C /* FeedViewController.swift */; };
+		E7D85ECE2257AF6100D0899C /* RssSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECD2257AF6100D0899C /* RssSource.swift */; };
 		E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */; };
-		E7F4F0FD225676CC00B3CA1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F0FC225676CC00B3CA1E /* ViewController.swift */; };
 		E7F4F100225676CC00B3CA1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F4F0FE225676CC00B3CA1E /* Main.storyboard */; };
 		E7F4F103225676CC00B3CA1E /* rss_parser_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F101225676CC00B3CA1E /* rss_parser_test.xcdatamodeld */; };
 		E7F4F105225676CD00B3CA1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F4F104225676CD00B3CA1E /* Assets.xcassets */; };
@@ -47,9 +48,10 @@
 		81F826C07BBC9D6B3F5EDE8E /* Pods-rss-parser-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss-parser-testTests.release.xcconfig"; path = "Target Support Files/Pods-rss-parser-testTests/Pods-rss-parser-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		ABDAF96E30EA5CB7B5AEEE07 /* Pods_rss_parser_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rss_parser_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B349DBCA7A2FE7EC2B617F /* Pods-rss-parser-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss-parser-testTests.debug.xcconfig"; path = "Target Support Files/Pods-rss-parser-testTests/Pods-rss-parser-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7D85ECA2257ACE900D0899C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		E7D85ECD2257AF6100D0899C /* RssSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSource.swift; sourceTree = "<group>"; };
 		E7F4F0F7225676CC00B3CA1E /* rss-parser-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rss-parser-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7F4F0FC225676CC00B3CA1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7F4F0FF225676CC00B3CA1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7F4F102225676CC00B3CA1E /* rss_parser_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rss_parser_test.xcdatamodel; sourceTree = "<group>"; };
 		E7F4F104225676CD00B3CA1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,8 +119,17 @@
 		E71087DA22574EC6006CE92F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7D85ECA2257ACE900D0899C /* FeedViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7D85ECC2257AF4800D0899C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7D85ECD2257AF6100D0899C /* RssSource.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E7F4F0EE225676CB00B3CA1E = {
@@ -146,9 +157,9 @@
 		E7F4F0F9225676CC00B3CA1E /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				E7D85ECC2257AF4800D0899C /* Model */,
 				E71087DA22574EC6006CE92F /* Controller */,
 				E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */,
-				E7F4F0FC225676CC00B3CA1E /* ViewController.swift */,
 				E7F4F0FE225676CC00B3CA1E /* Main.storyboard */,
 				E7F4F104225676CD00B3CA1E /* Assets.xcassets */,
 				E7F4F106225676CD00B3CA1E /* LaunchScreen.storyboard */,
@@ -403,8 +414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F4F103225676CC00B3CA1E /* rss_parser_test.xcdatamodeld in Sources */,
-				E7F4F0FD225676CC00B3CA1E /* ViewController.swift in Sources */,
+				E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */,
 				E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */,
+				E7D85ECE2257AF6100D0899C /* RssSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
