@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import FeedKit
+
 @testable import rss_parser_test
 
 class rss_parser_testTests: XCTestCase {
@@ -28,6 +30,11 @@ class rss_parser_testTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            let feedURL = URL(string: "http://images.apple.com/main/rss/hotnews/hotnews.rss")!
+            
+            let parser = FeedParser(URL: feedURL)
+            
+            parser.parse()
         }
     }
 

@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import FeedKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let feedURL = URL(string: "http://images.apple.com/main/rss/hotnews/hotnews.rss")!
+
+        let parser = FeedParser(URL: feedURL)
+        
+        parser.parse()
     }
 
 
