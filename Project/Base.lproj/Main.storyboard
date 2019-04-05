@@ -40,22 +40,6 @@
             </objects>
             <point key="canvasLocation" x="-175.19999999999999" y="660.59113300492618"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="viN-2d-vpJ">
-            <objects>
-                <viewController id="3eJ-98-cNR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IA7-ug-vZ2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cRQ-cZ-qew"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="9H4-9t-kjb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tc-Ci-Cyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="745" y="163"/>
-        </scene>
         <!--Feed View Controller-->
         <scene sceneID="w7K-ao-RUM">
             <objects>
@@ -66,11 +50,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MYk-aY-t4v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recommended" id="gg7-Db-fHx"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="gg7-Db-fHx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfi-C8-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-531"/>
+            <point key="canvasLocation" x="745" y="-163"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="DM2-be-S8U">
@@ -86,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vI-lL-Pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-1219"/>
+            <point key="canvasLocation" x="745" y="-845"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R2g-Bp-eVn">
@@ -123,7 +107,6 @@
                     <connections>
                         <segue destination="BXn-N7-Sxm" kind="relationship" relationship="viewControllers" id="Q0h-hm-8Mw"/>
                         <segue destination="iaR-6U-ByE" kind="relationship" relationship="viewControllers" id="mWz-DZ-Qfb"/>
-                        <segue destination="3eJ-98-cNR" kind="relationship" relationship="viewControllers" id="tVC-Fj-sOZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEQ-6E-gi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
