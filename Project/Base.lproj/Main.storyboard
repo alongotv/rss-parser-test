@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7W2-Lc-g83">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,12 +10,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sources View Controller-->
+        <scene sceneID="xUY-Sp-g7Y">
+            <objects>
+                <viewController id="VCw-DN-V0a" userLabel="Sources View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KuZ-AA-bmL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hJJ-sZ-0IJ">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hJJ-sZ-0IJ" firstAttribute="leading" secondItem="KuZ-AA-bmL" secondAttribute="leading" id="5ha-RU-3d9"/>
+                            <constraint firstItem="hJJ-sZ-0IJ" firstAttribute="bottom" secondItem="tLH-Ag-eO6" secondAttribute="bottom" id="7W9-Nc-X7s"/>
+                            <constraint firstAttribute="trailing" secondItem="hJJ-sZ-0IJ" secondAttribute="trailing" id="DFO-J2-FcP"/>
+                            <constraint firstItem="hJJ-sZ-0IJ" firstAttribute="top" secondItem="tLH-Ag-eO6" secondAttribute="top" id="bKX-BE-8QW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tLH-Ag-eO6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit" id="vr3-2G-Srk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6m-j7-34R"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acZ-uA-cIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="660.59113300492618"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="viN-2d-vpJ">
             <objects>
                 <viewController id="3eJ-98-cNR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IA7-ug-vZ2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cRQ-cZ-qew"/>
@@ -29,9 +59,9 @@
         <!--Feed View Controller-->
         <scene sceneID="w7K-ao-RUM">
             <objects>
-                <viewController id="iaR-6U-ByE" userLabel="Feed View Controller" sceneMemberID="viewController">
+                <viewController id="iaR-6U-ByE" userLabel="Feed View Controller" customClass="FeedViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JIL-pE-bSP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MYk-aY-t4v"/>
@@ -47,7 +77,7 @@
             <objects>
                 <viewController id="BXn-N7-Sxm" userLabel="Favourites View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcr-Sm-Goi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Ig-0B-x3U"/>
@@ -63,7 +93,7 @@
             <objects>
                 <navigationController id="7W2-Lc-g83" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRh-Sj-DXj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -79,7 +109,11 @@
             <objects>
                 <tabBarController id="yzq-Pr-M6F" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="OBj-UB-W1n">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dNc-4i-p7A"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dNc-4i-p7A">
+                            <connections>
+                                <segue destination="VCw-DN-V0a" kind="show" id="pc5-fS-rST"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iG7-Dz-ruJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
