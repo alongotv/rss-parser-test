@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RssSource" representedClassName="RssSource" syncable="YES">
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="sourceLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sourceName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RssSource" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="RssSource" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

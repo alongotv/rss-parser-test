@@ -12,21 +12,24 @@ import CoreData
 struct RssSource{
     var sourceName: String
     var sourceLink: String
+    var isFavouriteSource: Bool
 }
 
-class FavouriteSource: NSManagedObject{
+class RssSourceObject: NSManagedObject{
     @NSManaged var sourceName: String
     @NSManaged var sourceLink: String
+    @NSManaged var isFavouriteSource: Bool
     
     var source: RssSource {
         
         get {
-            return RssSource(sourceName: self.sourceName, sourceLink: self.sourceLink)
+            return RssSource(sourceName: self.sourceName, sourceLink: self.sourceLink, isFavouriteSource: self.isFavouriteSource)
         }
         
         set {
             self.sourceName = newValue.sourceName
             self.sourceLink = newValue.sourceLink
+            self.isFavouriteSource = newValue.isFavouriteSource
         }
     }
 }
