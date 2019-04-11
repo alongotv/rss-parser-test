@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class RssSourcesViewController: UITableViewController {
     
@@ -17,7 +19,8 @@ class RssSourcesViewController: UITableViewController {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked(sender:)))
         navigationItem.rightBarButtonItem = addButton
-
+        
+        fetchSourcesFromCoreData()
         // Do any additional setup after loading the view.
     }
     
@@ -47,8 +50,10 @@ class RssSourcesViewController: UITableViewController {
         }
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            let firstTextField = alertController.textFields![0] as UITextField
-            let secondTextField = alertController.textFields![1] as UITextField
+            let nameTextField = alertController.textFields![0] as UITextField
+            let linkTextField = alertController.textFields![1] as UITextField
+            
+            self.saveSource(name: nameTextField.text ?? "", link: linkTextField.text ?? "")
         })
         
         alertController.addAction(saveAction)
@@ -58,11 +63,31 @@ class RssSourcesViewController: UITableViewController {
     }
     
     @objc
-    func insertNewObject(_ sender: Any) { let object = RssSource(sourceName: "Source 1", sourceLink: "Hooray", isFavouriteSource: false)
-        sources.insert(object , at: 0)
+    func insertNewObject(_ sender: Any) {
+        
         tableView.reloadData()
     }
     
+    func saveSource(name: String, link: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "RssSource", in: managedContext)!
+        
+        let source = RssSource(entity: entity, insertInto: managedContext)
+        source.setValue( false, forKey: "isFavourite")
+        source.sourceName = name
+        source.sourceLink = link
+        
+        // 4
+        do {
+            try managedContext.save()
+            sources.append(source)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -77,6 +102,19 @@ class RssSourcesViewController: UITableViewController {
         }
     }
     
+    func fetchSourcesFromCoreData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<RssSource>(entityName: "RssSource")
+        
+        do {
+            sources = try managedContext.fetch(fetchRequest) 
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
     /*
      // MARK: - Navigation
      
