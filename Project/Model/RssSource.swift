@@ -9,27 +9,27 @@
 import Foundation
 import CoreData
 
-struct RssSource{
+struct RssSourceObject{
     var sourceName: String
     var sourceLink: String
-    var isFavouriteSource: Bool
+    var isFavourite: Bool
 }
 
-class RssSourceObject: NSManagedObject{
+public class RssSource: NSManagedObject{
     @NSManaged var sourceName: String
     @NSManaged var sourceLink: String
-    @NSManaged var isFavouriteSource: Bool
+    @NSManaged var isFavourite: Bool
     
-    var source: RssSource {
+    var source: RssSourceObject {
         
         get {
-            return RssSource(sourceName: self.sourceName, sourceLink: self.sourceLink, isFavouriteSource: self.isFavouriteSource)
+            return RssSourceObject(sourceName: self.sourceName, sourceLink: self.sourceLink, isFavourite: self.isFavourite)
         }
         
         set {
             self.sourceName = newValue.sourceName
             self.sourceLink = newValue.sourceLink
-            self.isFavouriteSource = newValue.isFavouriteSource
+            self.isFavourite = newValue.isFavourite
         }
     }
 }
