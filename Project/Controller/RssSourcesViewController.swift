@@ -80,10 +80,11 @@ class RssSourcesViewController: UITableViewController {
         source.sourceName = name
         source.sourceLink = link
         
+        sources.append(source)
+        tableView.reloadData()
         // 4
         do {
             try managedContext.save()
-            sources.append(source)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -95,10 +96,33 @@ class RssSourcesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            removeSourceFromCoreData(source: sources[indexPath.row])
             sources.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    func removeSourceFromCoreData(source: RssSource){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RssSource")
+        
+        request.predicate = NSPredicate(format:"sourceLink = %@", source.sourceLink!)
+        
+        let result = try? managedContext.fetch(request)
+        let resultData = result as! [NSManagedObject]
+        
+        
+        managedContext.delete(resultData[0])
+        
+        do {
+           try managedContext.save()}
+        catch let error as NSError{
+            print("Could not delete. \(error), \(error.userInfo)")
         }
     }
     
