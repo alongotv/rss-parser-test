@@ -38,7 +38,7 @@ class Persistence {
         managedContext.delete(resultData[0])
         
         do {
-            try managedContext.save()}
+            try managedContext.save() }
         catch let error as NSError{
             print("Could not delete. \(error), \(error.userInfo)")
         }
