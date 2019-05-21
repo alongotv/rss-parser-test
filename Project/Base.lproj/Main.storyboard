@@ -10,21 +10,118 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
-        <scene sceneID="w7K-ao-RUM">
+        <!--Your Feed-->
+        <scene sceneID="FvN-Vt-mlG">
             <objects>
-                <viewController id="iaR-6U-ByE" userLabel="Feed View Controller" customClass="FeedViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JIL-pE-bSP">
+                <collectionViewController id="Cni-Db-SYe" customClass="FeedViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UOn-vz-KaO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="MYk-aY-t4v"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Your Feed" id="gg7-Db-fHx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfi-C8-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YoK-WK-fzK">
+                            <size key="itemSize" width="375" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RssCollectionViewCellIdentifier" id="RkK-eI-5ab" customClass="RssCollectionViewCell" customModule="rss_parser_test" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-P8-VHq">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="100"/>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="leading" secondItem="RkK-eI-5ab" secondAttribute="leading" constant="8" id="75A-tf-VCd"/>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="top" secondItem="RkK-eI-5ab" secondAttribute="top" id="boc-zK-oof"/>
+                                    <constraint firstAttribute="trailing" secondItem="ayE-P8-VHq" secondAttribute="trailing" constant="8" id="e5p-oW-L12"/>
+                                    <constraint firstAttribute="bottom" secondItem="ayE-P8-VHq" secondAttribute="bottom" id="fFB-ZZ-qLM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="cellTitle" destination="ayE-P8-VHq" id="9I7-JG-VQ2"/>
+                                    <segue destination="6hm-z8-GkP" kind="show" identifier="newsItemCellToNewsItemViewController" id="jxZ-Q5-gBa"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="BLK-Sa-UpR" customClass="SectionHeader" customModule="rss_parser_test" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4M-A0-6yP">
+                                    <rect key="frame" x="16" y="12" width="359" height="26"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="G4M-A0-6yP" firstAttribute="leading" secondItem="BLK-Sa-UpR" secondAttribute="leadingMargin" constant="8" id="EAI-vK-1GO"/>
+                                <constraint firstItem="G4M-A0-6yP" firstAttribute="top" secondItem="BLK-Sa-UpR" secondAttribute="topMargin" constant="4" id="RWi-Gw-yX8"/>
+                                <constraint firstItem="G4M-A0-6yP" firstAttribute="trailing" secondItem="BLK-Sa-UpR" secondAttribute="trailingMargin" constant="8" id="bpx-ai-c70"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="G4M-A0-6yP" secondAttribute="bottom" constant="4" id="rb1-pA-Gkn"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sectionHeaderLabel" destination="G4M-A0-6yP" id="uOB-mg-GNe"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="Cni-Db-SYe" id="xLO-6V-drO"/>
+                            <outlet property="delegate" destination="Cni-Db-SYe" id="gkE-xQ-8Fa"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Your Feed" id="FD4-8r-IQH"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHE-kY-eob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-163"/>
+            <point key="canvasLocation" x="744.79999999999995" y="-163.30049261083744"/>
+        </scene>
+        <!--News Item View Controller-->
+        <scene sceneID="A5y-4K-1G2">
+            <objects>
+                <viewController id="6hm-z8-GkP" customClass="NewsItemViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PKo-j8-FG9" customClass="NewsItemView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Ud-L4g">
+                                <rect key="frame" x="67" y="342" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ski-zE-qAN">
+                                <rect key="frame" x="166" y="88" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="y4i-Yb-zif"/>
+                    </view>
+                    <connections>
+                        <outlet property="textItemDescription" destination="QOQ-Ud-L4g" id="eIp-GR-6us"/>
+                        <outlet property="textItemLabel" destination="Ski-zE-qAN" id="Dhs-Ol-pQq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Im-hi-ijJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="-379"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="DM2-be-S8U">
@@ -75,8 +172,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iaR-6U-ByE" kind="relationship" relationship="viewControllers" id="mWz-DZ-Qfb"/>
-                        <segue destination="BXn-N7-Sxm" kind="relationship" relationship="viewControllers" id="seD-Js-TZn"/>
+                        <segue destination="Cni-Db-SYe" kind="relationship" relationship="viewControllers" id="JoM-gR-MW4"/>
+                        <segue destination="BXn-N7-Sxm" kind="relationship" relationship="viewControllers" id="I0W-Kj-ub8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEQ-6E-gi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
