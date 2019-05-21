@@ -13,6 +13,7 @@ import CoreData
 class RssSourcesViewController: UITableViewController {
     
     var sources = [RssSource]()
+    let coreDataRepository = Persistence()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class RssSourcesViewController: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked(sender:)))
         navigationItem.rightBarButtonItem = addButton
         
-        fetchSourcesFromCoreData()
+        sources = self.coreDataRepository.fetchSourcesFromCoreData()
         // Do any additional setup after loading the view.
     }
     
@@ -53,7 +54,7 @@ class RssSourcesViewController: UITableViewController {
             let nameTextField = alertController.textFields![0] as UITextField
             let linkTextField = alertController.textFields![1] as UITextField
             
-            self.saveSource(name: nameTextField.text ?? "", link: linkTextField.text ?? "")
+            self.coreDataRepository.saveSourceToCoreData(name: nameTextField.text ?? "", link: linkTextField.text ?? "")
         })
         
         alertController.addAction(saveAction)
@@ -68,27 +69,7 @@ class RssSourcesViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func saveSource(name: String, link: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "RssSource", in: managedContext)!
-        
-        let source = RssSource(entity: entity, insertInto: managedContext)
-        source.setValue( false, forKey: "isFavourite")
-        source.sourceName = name
-        source.sourceLink = link
-        
-        sources.append(source)
-        tableView.reloadData()
-        // 4
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -96,7 +77,7 @@ class RssSourcesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            removeSourceFromCoreData(source: sources[indexPath.row])
+            self.coreDataRepository.removeObjectFromCoreData(source: sources[indexPath.row])
             sources.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -104,41 +85,6 @@ class RssSourcesViewController: UITableViewController {
         }
     }
     
-    func removeSourceFromCoreData(source: RssSource){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RssSource")
-        
-        request.predicate = NSPredicate(format:"sourceLink = %@", source.sourceLink!)
-        
-        let result = try? managedContext.fetch(request)
-        let resultData = result as! [NSManagedObject]
-        
-        
-        managedContext.delete(resultData[0])
-        
-        do {
-           try managedContext.save()}
-        catch let error as NSError{
-            print("Could not delete. \(error), \(error.userInfo)")
-        }
-    }
-    
-    func fetchSourcesFromCoreData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<RssSource>(entityName: "RssSource")
-        
-        do {
-            sources = try managedContext.fetch(fetchRequest) 
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
     /*
      // MARK: - Navigation
      
