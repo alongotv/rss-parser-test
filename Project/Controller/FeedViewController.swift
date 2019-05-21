@@ -63,10 +63,6 @@ class FeedViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "newsItemCellToNewsItemViewController", sender: sources[indexPath.item])
-    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -74,8 +70,12 @@ class FeedViewController: UICollectionViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "newsItemCellToNewsItemViewController" {
-            let controller = (segue.destination as! UINavigationController).viewControllers[0] as! NewsItemViewController
+            let controller = segue.destination as! NewsItemViewController
 
+            if let indexPath = self.collectionView.indexPathsForSelectedItems {
+                let selectedNewsItem = newsItems[indexPath[0].item]
+                controller.newsItem = selectedNewsItem
+            }
         }
     }
 }
