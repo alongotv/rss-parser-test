@@ -26,7 +26,7 @@ class Persistence {
         return sources
     }
     
-    func removeObjectFromCoreData(source: RssSource){
+    func removeObjectFromCoreData(source: RssSource) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RssSource")
