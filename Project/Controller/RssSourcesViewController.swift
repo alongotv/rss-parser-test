@@ -54,6 +54,13 @@ class RssSourcesViewController: UITableViewController {
             let nameTextField = alertController.textFields![0] as UITextField
             let linkTextField = alertController.textFields![1] as UITextField
             
+            if let urlSource = linkTextField.text {
+                if !urlSource.isValidURL {
+                    self.showAlert(with: "Provided URL is invalid.")
+                    return
+                }
+            }
+            
             self.coreDataRepository.saveSourceToCoreData(name: nameTextField.text ?? "", link: linkTextField.text ?? "")
         })
         
@@ -94,5 +101,10 @@ class RssSourcesViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+ 
+    func showAlert(with message:String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
