@@ -23,6 +23,7 @@ class NewsItemViewController: UIViewController {
 
         textItemLabel.text = newsItem.title
         textItemDescription.text = newsItem.description        // Do any additional setup after loading the view.
+        
     }
     
 
