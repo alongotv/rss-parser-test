@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D77EB65933572C2D60A993E /* Pods_rss_parser_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAF96E30EA5CB7B5AEEE07 /* Pods_rss_parser_test.framework */; };
 		2E9281E441847B30D4DCFC72 /* Pods_rss_parser_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E0488087E111386125D40F /* Pods_rss_parser_testUITests.framework */; };
+		E73098EB229E7B8800FEAA5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73098EA229E7B8800FEAA5A /* Persistence.swift */; };
 		E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECA2257ACE900D0899C /* FeedViewController.swift */; };
 		E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */; };
 		E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		81F826C07BBC9D6B3F5EDE8E /* Pods-rss-parser-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss-parser-testTests.release.xcconfig"; path = "Target Support Files/Pods-rss-parser-testTests/Pods-rss-parser-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		ABDAF96E30EA5CB7B5AEEE07 /* Pods_rss_parser_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rss_parser_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B349DBCA7A2FE7EC2B617F /* Pods-rss-parser-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss-parser-testTests.debug.xcconfig"; path = "Target Support Files/Pods-rss-parser-testTests/Pods-rss-parser-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E73098EA229E7B8800FEAA5A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E7D85ECA2257ACE900D0899C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewController.swift; sourceTree = "<group>"; };
 		E7F4F0F7225676CC00B3CA1E /* rss-parser-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rss-parser-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 		E7D85ECC2257AF4800D0899C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E73098EA229E7B8800FEAA5A /* Persistence.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */,
 				E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */,
 				E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */,
+				E73098EB229E7B8800FEAA5A /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
