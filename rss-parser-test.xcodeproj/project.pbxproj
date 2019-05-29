@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,10 @@
 		E73098EB229E7B8800FEAA5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73098EA229E7B8800FEAA5A /* Persistence.swift */; };
 		E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECA2257ACE900D0899C /* FeedViewController.swift */; };
 		E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */; };
+		E7DF811B229E87FC0075F4E4 /* RssCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */; };
+		E7DF811C229E87FC0075F4E4 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF811A229E87FC0075F4E4 /* SectionHeader.swift */; };
+		E7DF811E229E88160075F4E4 /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF811D229E88160075F4E4 /* NewsItemViewController.swift */; };
+		E7DF8120229E88270075F4E4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF811F229E88270075F4E4 /* Extensions.swift */; };
 		E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */; };
 		E7F4F100225676CC00B3CA1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F4F0FE225676CC00B3CA1E /* Main.storyboard */; };
 		E7F4F103225676CC00B3CA1E /* rss_parser_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F101225676CC00B3CA1E /* rss_parser_test.xcdatamodeld */; };
@@ -52,6 +56,10 @@
 		E73098EA229E7B8800FEAA5A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E7D85ECA2257ACE900D0899C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewController.swift; sourceTree = "<group>"; };
+		E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7DF811A229E87FC0075F4E4 /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		E7DF811D229E88160075F4E4 /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
+		E7DF811F229E88270075F4E4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7F4F0F7225676CC00B3CA1E /* rss-parser-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rss-parser-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F4F0FF225676CC00B3CA1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 		E71087DA22574EC6006CE92F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7DF811D229E88160075F4E4 /* NewsItemViewController.swift */,
 				E7D85ECA2257ACE900D0899C /* FeedViewController.swift */,
 				E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */,
 			);
@@ -133,6 +142,15 @@
 				E73098EA229E7B8800FEAA5A /* Persistence.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E7DF8118229E87FC0075F4E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */,
+				E7DF811A229E87FC0075F4E4 /* SectionHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E7F4F0EE225676CB00B3CA1E = {
@@ -160,6 +178,8 @@
 		E7F4F0F9225676CC00B3CA1E /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				E7DF811F229E88270075F4E4 /* Extensions.swift */,
+				E7DF8118229E87FC0075F4E4 /* View */,
 				E7D85ECC2257AF4800D0899C /* Model */,
 				E71087DA22574EC6006CE92F /* Controller */,
 				E7F4F0FA225676CC00B3CA1E /* AppDelegate.swift */,
@@ -327,16 +347,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rss-parser-test/Pods-rss-parser-test-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-rss-parser-test/Pods-rss-parser-test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-rss-parser-test/Pods-rss-parser-test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -417,7 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F4F103225676CC00B3CA1E /* rss_parser_test.xcdatamodeld in Sources */,
+				E7DF8120229E88270075F4E4 /* Extensions.swift in Sources */,
+				E7DF811B229E87FC0075F4E4 /* RssCollectionViewCell.swift in Sources */,
+				E7DF811E229E88160075F4E4 /* NewsItemViewController.swift in Sources */,
 				E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */,
+				E7DF811C229E87FC0075F4E4 /* SectionHeader.swift in Sources */,
 				E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */,
 				E7F4F0FB225676CC00B3CA1E /* AppDelegate.swift in Sources */,
 				E73098EB229E7B8800FEAA5A /* Persistence.swift in Sources */,
