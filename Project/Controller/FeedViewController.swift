@@ -25,7 +25,7 @@ class FeedViewController: UICollectionViewController {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sources.count
+        return rssFeeds.count
     }
     
     //    func numberOfItems(inSection section: Int) -> Int {
