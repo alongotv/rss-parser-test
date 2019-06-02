@@ -20,13 +20,7 @@ class FeedViewController: UICollectionViewController {
         super.viewDidLoad()
         
         sources = coreDataRepository.fetchSourcesFromCoreData()
-        
-        let parser = FeedParser.init(URL: URL(string: "https://images.apple.com/main/rss/hotnews/hotnews.rss")!)
-        let result = parser.parse()
-        newsItems = result.rssFeed!.items!
-        print("NewsItems = \(newsItems.count)")
-        
-        collectionView.reloadData()
+        fetchRssFeeds()
         
         for source in newsItems {
             print(source.title)
