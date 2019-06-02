@@ -47,7 +47,7 @@ class FeedViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader {
-            sectionHeader.sectionHeaderLabel.text = "Section \(indexPath.row)"
+            sectionHeader.sectionHeaderLabel.text = sources[indexPath.section].sourceName
             return sectionHeader
         }
         return UICollectionReusableView()
