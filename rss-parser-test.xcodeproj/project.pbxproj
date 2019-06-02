@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -166,7 +166,6 @@
 		E7F4F0EE225676CB00B3CA1E = {
 			isa = PBXGroup;
 			children = (
-				E7D0E4EF22A4757F00276EF3 /* Networking */,
 				E7F4F0F9225676CC00B3CA1E /* Project */,
 				E7F4F111225676CD00B3CA1E /* rss-parser-testTests */,
 				E7F4F11C225676CD00B3CA1E /* rss-parser-testUITests */,
@@ -189,6 +188,7 @@
 		E7F4F0F9225676CC00B3CA1E /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				E7D0E4EF22A4757F00276EF3 /* Networking */,
 				E7DF811F229E88270075F4E4 /* Extensions.swift */,
 				E7DF8118229E87FC0075F4E4 /* View */,
 				E7D85ECC2257AF4800D0899C /* Model */,
