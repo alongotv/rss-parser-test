@@ -1,5 +1,5 @@
 //
-//  FeedTools.swift
+//  FeedClient.swift
 //  rss-parser-test
 //
 //  Created by Vladimir Vetrov on 01/05/2019.
