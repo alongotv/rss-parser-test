@@ -12,9 +12,10 @@ import FeedKit
 
 class FeedViewController: UICollectionViewController {
     
-    var sources = [RssSource]()
-    var newsItems = [RSSFeedItem]()
-    let coreDataRepository = Persistence()
+   private var sources = [RssSource]()
+   private var rssFeeds = [RSSFeed]()
+   private let coreDataRepository = Persistence()
+   private let feedClient = FeedClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
