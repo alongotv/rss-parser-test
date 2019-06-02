@@ -41,7 +41,11 @@ class FeedViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newsItems.count
+        if rssFeeds.count == 0 {
+            return 0
+        }
+        
+        return rssFeeds[section].items!.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -72,7 +76,8 @@ class FeedViewController: UICollectionViewController {
             let controller = segue.destination as! NewsItemViewController
 
             if let indexPath = self.collectionView.indexPathsForSelectedItems {
-                let selectedNewsItem = newsItems[indexPath[0].item]
+                let newsItem = rssFeeds[indexPath[0].section].items![indexPath[0].item]
+                let selectedNewsItem = newsItem
                 controller.newsItem = selectedNewsItem
             }
         }
