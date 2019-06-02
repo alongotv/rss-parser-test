@@ -22,10 +22,6 @@ class FeedViewController: UICollectionViewController {
         sources = coreDataRepository.fetchSourcesFromCoreData()
         fetchRssFeeds()
         
-        for source in newsItems {
-            print(source.title)
-        }
-        // Do any additional setup after loading the view.
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
