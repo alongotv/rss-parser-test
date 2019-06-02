@@ -54,8 +54,9 @@ class FeedViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RssCollectionViewCellIdentifier", for: indexPath) as! RssCollectionViewCell
+        let newsItem = rssFeeds[indexPath.section].items![indexPath.item]
         
-        cell.cellTitle.text = newsItems[indexPath.item].title
+        cell.cellTitle.text = newsItem.title
         
         return cell
     }
