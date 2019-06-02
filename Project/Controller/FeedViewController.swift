@@ -28,9 +28,16 @@ class FeedViewController: UICollectionViewController {
         return rssFeeds.count
     }
     
-    //    func numberOfItems(inSection section: Int) -> Int {
-    //        return newsItems.count
-    //    }
+    func fetchRssFeeds() {
+        sources.forEach({ source in
+            feedClient.fetchNewsItemsAsync(from: source.sourceLink!, completionHandler: { result in
+                DispatchQueue.main.async {
+                        self.rssFeeds.append((result.rssFeed)!)
+                        self.collectionView.reloadData()
+                }
+            })
+        })
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newsItems.count
