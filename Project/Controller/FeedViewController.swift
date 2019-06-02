@@ -34,7 +34,7 @@ class FeedViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sources.count
     }
     
