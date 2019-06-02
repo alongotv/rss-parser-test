@@ -9,16 +9,28 @@
 import Foundation
 import FeedKit
 
-class FeedTools {
+public class FeedClient {
+    
     func fetchNewsItemsAsync(from URL: URL, completionHandler: @escaping (Result) -> ()){
         let parser = FeedParser.init(URL: URL)
         parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated),
-        result: {
-            result in
-            DispatchQueue.main.async {
-                completionHandler(result)
-            }
+                          result: {
+                            result in
+                            DispatchQueue.main.async {
+                                completionHandler(result)
+                                
+                            }
         })
-
+    }
+    
+    func fetchNewsItemsAsync(from stringUrl: String, completionHandler: @escaping (Result) -> ()){
+        let parser = FeedParser.init(URL: URL(string: stringUrl)!)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated),
+                          result: {
+                            result in
+                            DispatchQueue.main.async {
+                                completionHandler(result)
+                                }
+        })
     }
 }
