@@ -28,7 +28,8 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
         return rssFeeds.count
     }
     
-    func coreDataContentsDidChange() {
+    func coreDataContentsDidChange(with index: Int) {
+        
         fetchSourcesFromCoreData()
         fetchRssFeeds()
     }
