@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import FeedKit
 
-class FeedViewController: UICollectionViewController {
+class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
     
    private var sources = [RssSource]()
    private var rssFeeds = [RSSFeed]()
@@ -20,21 +20,29 @@ class FeedViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sources = coreDataRepository.fetchSourcesFromCoreData()
+        fetchSourcesFromCoreData()
         fetchRssFeeds()
-        
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return rssFeeds.count
     }
     
+    func coreDataContentsDidChange() {
+        fetchSourcesFromCoreData()
+        fetchRssFeeds()
+    }
+    
+    func fetchSourcesFromCoreData() {
+        self.sources = coreDataRepository.fetchSourcesFromCoreData()
+    }
+    
     func fetchRssFeeds() {
-        sources.forEach({ source in
+        self.sources.forEach({ source in
             feedClient.fetchNewsItemsAsync(from: source.sourceLink!, completionHandler: { result in
                 DispatchQueue.main.async {
-                        self.rssFeeds.append((result.rssFeed)!)
-                        self.collectionView.reloadData()
+                    self.rssFeeds.append((result.rssFeed)!)
+                    self.collectionView.reloadData()
                 }
             })
         })
@@ -72,14 +80,25 @@ class FeedViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "newsItemCellToNewsItemViewController" {
+        
+        switch segue.identifier {
+        case "newsItemCellToNewsItemViewController":
             let controller = segue.destination as! NewsItemViewController
-
+            
             if let indexPath = self.collectionView.indexPathsForSelectedItems {
                 let newsItem = rssFeeds[indexPath[0].section].items![indexPath[0].item]
                 let selectedNewsItem = newsItem
                 controller.newsItem = selectedNewsItem
             }
+        break
+        case "feedViewControllerToRssSourcesViewController":
+            let controller = segue.destination as! RssSourcesViewController
+            controller.coreDataDelegate = self
+            break
+        default:
+            print("Unhandled segue")
         }
+        
     }
+    
 }
