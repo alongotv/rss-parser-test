@@ -20,8 +20,8 @@ class RssSourcesViewController: UITableViewController {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked(sender:)))
         navigationItem.rightBarButtonItem = addButton
-        
-        sources = self.coreDataRepository.fetchSourcesFromCoreData()
+        self.sources = self.coreDataRepository.fetchSourcesFromCoreData()
+
         // Do any additional setup after loading the view.
     }
     
@@ -62,6 +62,13 @@ class RssSourcesViewController: UITableViewController {
             }
             
             self.coreDataRepository.saveSourceToCoreData(name: nameTextField.text ?? "", link: linkTextField.text ?? "")
+            
+            self.sources = self.coreDataRepository.fetchSourcesFromCoreData()
+            
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: [IndexPath.init(row: self.sources.count - 1, section: 0)], with: .bottom)
+            self.tableView.endUpdates()
+
         })
         
         alertController.addAction(saveAction)
