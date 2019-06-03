@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7W2-Lc-g83">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yzq-Pr-M6F">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Your Feed-->
+        <!--Feed View Controller-->
         <scene sceneID="FvN-Vt-mlG">
             <objects>
                 <collectionViewController id="Cni-Db-SYe" customClass="FeedViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,11 +81,17 @@
                             <outlet property="delegate" destination="Cni-Db-SYe" id="gkE-xQ-8Fa"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Your Feed" id="FD4-8r-IQH"/>
+                    <navigationItem key="navigationItem" id="WDk-Pp-cGq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dNc-4i-p7A">
+                            <connections>
+                                <segue destination="f14-Cb-nr5" kind="show" identifier="feedViewControllerToRssSourcesViewController" id="hBU-Sc-D8c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHE-kY-eob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742.02898550724649" y="-163.85869565217394"/>
+            <point key="canvasLocation" x="1649.2753623188407" y="-163.85869565217394"/>
         </scene>
         <!--News Item View Controller-->
         <scene sceneID="A5y-4K-1G2">
@@ -102,7 +108,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Ud-L4g">
-                                <rect key="frame" x="16" y="108.33333333333331" width="382" height="627.66666666666674"/>
+                                <rect key="frame" x="16" y="108.33333333333331" width="382" height="578.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -131,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Im-hi-ijJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956.521739130435" y="-379.6875"/>
+            <point key="canvasLocation" x="2863.768115942029" y="-379.89130434782612"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="DM2-be-S8U">
@@ -149,40 +155,17 @@
             </objects>
             <point key="canvasLocation" x="745" y="-845"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="R2g-Bp-eVn">
-            <objects>
-                <navigationController id="7W2-Lc-g83" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRh-Sj-DXj">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="yzq-Pr-M6F" kind="relationship" relationship="rootViewController" id="UmA-WW-u6P"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WOV-Z8-H2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1123" y="-162"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J3p-NJ-81P">
             <objects>
                 <tabBarController id="yzq-Pr-M6F" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="OBj-UB-W1n">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dNc-4i-p7A">
-                            <connections>
-                                <segue destination="f14-Cb-nr5" kind="show" identifier="feedViewControllerToRssSourcesViewController" id="hBU-Sc-D8c"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iG7-Dz-ruJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Cni-Db-SYe" kind="relationship" relationship="viewControllers" id="JoM-gR-MW4"/>
+                        <segue destination="Rcf-F3-9GL" kind="relationship" relationship="viewControllers" id="JoM-gR-MW4"/>
                         <segue destination="BXn-N7-Sxm" kind="relationship" relationship="viewControllers" id="I0W-Kj-ub8"/>
                     </connections>
                 </tabBarController>
@@ -226,6 +209,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLd-6c-1UI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-175" y="558"/>
+        </scene>
+        <!--Your Feed-->
+        <scene sceneID="KUt-p4-zXq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rcf-F3-9GL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Your Feed" id="FD4-8r-IQH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B2H-OB-BGL">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cni-Db-SYe" kind="relationship" relationship="rootViewController" id="xhi-Aq-WgD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUb-hO-t62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742.02898550724649" y="-163.85869565217394"/>
         </scene>
     </scenes>
 </document>
