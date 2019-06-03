@@ -12,6 +12,7 @@
 		CF03CE2C9C2DB3B2B34BB361 /* Pods_rss_parser_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17A1B406A206F9D0BB34B06 /* Pods_rss_parser_testTests.framework */; };
 		E73098EB229E7B8800FEAA5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73098EA229E7B8800FEAA5A /* Persistence.swift */; };
 		E7D0E4F122A4759C00276EF3 /* FeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E4F022A4759C00276EF3 /* FeedClient.swift */; };
+		E7D4442E22A530B700C43DF5 /* CoreDataInstanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4442D22A530B700C43DF5 /* CoreDataInstanceDelegate.swift */; };
 		E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECA2257ACE900D0899C /* FeedViewController.swift */; };
 		E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */; };
 		E7DF811B229E87FC0075F4E4 /* RssCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */; };
@@ -55,6 +56,7 @@
 		E17A1B406A206F9D0BB34B06 /* Pods_rss_parser_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rss_parser_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73098EA229E7B8800FEAA5A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E7D0E4F022A4759C00276EF3 /* FeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedClient.swift; sourceTree = "<group>"; };
+		E7D4442D22A530B700C43DF5 /* CoreDataInstanceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInstanceDelegate.swift; sourceTree = "<group>"; };
 		E7D85ECA2257ACE900D0899C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E7D85ECF2257B6D300D0899C /* RssSourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewController.swift; sourceTree = "<group>"; };
 		E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				E7DF8119229E87FC0075F4E4 /* RssCollectionViewCell.swift */,
 				E7DF811A229E87FC0075F4E4 /* SectionHeader.swift */,
+				E7D4442D22A530B700C43DF5 /* CoreDataInstanceDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				E7DF8120229E88270075F4E4 /* Extensions.swift in Sources */,
 				E7DF811B229E87FC0075F4E4 /* RssCollectionViewCell.swift in Sources */,
 				E7DF811E229E88160075F4E4 /* NewsItemViewController.swift in Sources */,
+				E7D4442E22A530B700C43DF5 /* CoreDataInstanceDelegate.swift in Sources */,
 				E7D85ED02257B6D300D0899C /* RssSourcesViewController.swift in Sources */,
 				E7DF811C229E87FC0075F4E4 /* SectionHeader.swift in Sources */,
 				E7D85ECB2257ACE900D0899C /* FeedViewController.swift in Sources */,
