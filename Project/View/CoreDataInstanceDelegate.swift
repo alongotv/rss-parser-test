@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CoreDataInstanceDelegate {
-    func coreDataContentsDidChange()
+    func coreDataContentsDidChange(with index: Int)
 }
