@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7W2-Lc-g83">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,25 +15,25 @@
             <objects>
                 <collectionViewController id="Cni-Db-SYe" customClass="FeedViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UOn-vz-KaO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YoK-WK-fzK">
-                            <size key="itemSize" width="375" height="100"/>
+                            <size key="itemSize" width="323" height="100"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RssCollectionViewCellIdentifier" id="RkK-eI-5ab" customClass="RssCollectionViewCell" customModule="rss_parser_test" customModuleProvider="target">
-                                <rect key="frame" x="19.666666666666668" y="50" width="375" height="100"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="RssCollectionViewCellIdentifier" id="RkK-eI-5ab" customClass="RssCollectionViewCell" customModule="rss_parser_test" customModuleProvider="target">
+                                <rect key="frame" x="45.666666666666664" y="50" width="323" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="323" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-P8-VHq">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="100"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -43,10 +43,10 @@
                                 </view>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="leading" secondItem="RkK-eI-5ab" secondAttribute="leading" constant="8" id="75A-tf-VCd"/>
-                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="top" secondItem="RkK-eI-5ab" secondAttribute="top" id="boc-zK-oof"/>
-                                    <constraint firstAttribute="trailing" secondItem="ayE-P8-VHq" secondAttribute="trailing" constant="8" id="e5p-oW-L12"/>
-                                    <constraint firstAttribute="bottom" secondItem="ayE-P8-VHq" secondAttribute="bottom" id="fFB-ZZ-qLM"/>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="top" secondItem="RkK-eI-5ab" secondAttribute="top" id="8tz-w8-RZ6"/>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="leading" secondItem="RkK-eI-5ab" secondAttribute="leading" id="IZc-LA-TWx"/>
+                                    <constraint firstAttribute="bottom" secondItem="ayE-P8-VHq" secondAttribute="bottom" id="WBX-fJ-LxV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ayE-P8-VHq" secondAttribute="trailing" id="fAU-fE-RPL"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="cellTitle" destination="ayE-P8-VHq" id="9I7-JG-VQ2"/>
@@ -59,7 +59,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4M-A0-6yP">
-                                    <rect key="frame" x="16" y="16" width="398" height="18"/>
+                                    <rect key="frame" x="16" y="0.0" width="382" height="50"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -67,10 +67,10 @@
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="G4M-A0-6yP" firstAttribute="leading" secondItem="BLK-Sa-UpR" secondAttribute="leadingMargin" constant="8" id="EAI-vK-1GO"/>
-                                <constraint firstItem="G4M-A0-6yP" firstAttribute="top" secondItem="BLK-Sa-UpR" secondAttribute="topMargin" constant="8" id="RWi-Gw-yX8"/>
-                                <constraint firstItem="G4M-A0-6yP" firstAttribute="trailing" secondItem="BLK-Sa-UpR" secondAttribute="trailingMargin" constant="8" id="bpx-ai-c70"/>
-                                <constraint firstAttribute="bottomMargin" secondItem="G4M-A0-6yP" secondAttribute="bottom" constant="8" id="rb1-pA-Gkn"/>
+                                <constraint firstItem="G4M-A0-6yP" firstAttribute="top" secondItem="BLK-Sa-UpR" secondAttribute="top" id="4w6-8P-vpl"/>
+                                <constraint firstAttribute="bottom" secondItem="G4M-A0-6yP" secondAttribute="bottom" id="i2V-fM-RYW"/>
+                                <constraint firstItem="G4M-A0-6yP" firstAttribute="leading" secondItem="BLK-Sa-UpR" secondAttribute="leading" constant="16" id="q3S-Sj-ySt"/>
+                                <constraint firstAttribute="trailing" secondItem="G4M-A0-6yP" secondAttribute="trailing" constant="16" id="yt5-Wn-Rkj"/>
                             </constraints>
                             <connections>
                                 <outlet property="sectionHeaderLabel" destination="G4M-A0-6yP" id="uOB-mg-GNe"/>
@@ -85,24 +85,24 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHE-kY-eob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.79999999999995" y="-163.30049261083744"/>
+            <point key="canvasLocation" x="742.02898550724649" y="-163.85869565217394"/>
         </scene>
         <!--News Item View Controller-->
         <scene sceneID="A5y-4K-1G2">
             <objects>
                 <viewController id="6hm-z8-GkP" customClass="NewsItemViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PKo-j8-FG9" customClass="NewsItemView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ski-zE-qAN">
-                                <rect key="frame" x="16" y="104" width="382" height="20.333333333333329"/>
+                                <rect key="frame" x="16" y="80" width="382" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Ud-L4g">
-                                <rect key="frame" x="16" y="132.33333333333331" width="382" height="729.66666666666674"/>
+                                <rect key="frame" x="16" y="108.33333333333331" width="382" height="627.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,7 +138,7 @@
             <objects>
                 <viewController id="BXn-N7-Sxm" userLabel="Favourites View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcr-Sm-Goi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Ig-0B-x3U"/>
@@ -154,7 +154,7 @@
             <objects>
                 <navigationController id="7W2-Lc-g83" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRh-Sj-DXj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -195,7 +195,7 @@
             <objects>
                 <tableViewController id="f14-Cb-nr5" customClass="RssSourcesViewController" customModule="rss_parser_test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ivl-G2-I7i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
