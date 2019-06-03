@@ -69,7 +69,7 @@ class RssSourcesViewController: UITableViewController {
             self.tableView.beginUpdates()
             self.tableView.insertRows(at: [IndexPath.init(row: self.sources.count - 1, section: 0)], with: .bottom)
             self.tableView.endUpdates()
-            self.coreDataDelegate.coreDataContentsDidChange()
+            self.coreDataDelegate.coreDataContentsDidChange(with: self.sources.count)
 
         })
         
@@ -96,7 +96,7 @@ class RssSourcesViewController: UITableViewController {
             self.coreDataRepository.removeObjectFromCoreData(source: sources[indexPath.row])
             sources.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            self.coreDataDelegate.coreDataContentsDidChange()
+            self.coreDataDelegate.coreDataContentsDidChange(with: indexPath.row)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
