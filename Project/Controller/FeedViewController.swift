@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 import FeedKit
 
 class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
@@ -33,8 +32,18 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
     /// - Parameter index: index of of item in array that was added or removed
     func coreDataContentsDidChange(with index: Int) {
         
-        fetchSourcesFromCoreData()
-        fetchRssFeeds()
+        if sources.count - 1 >= index { // If index variable is smaller than index of the last element in the rssFeeds array, we should remove one RSSFeed from the array
+            sources.remove(at: index)
+            rssFeeds.remove(at: index)
+            
+            collectionView.deleteItems(at: [IndexPath.init(indexes: [index])])
+            collectionView.reloadData()
+            
+        } else {    // User added more sources, update RssSource array from CoreData and then fetch new RSS Feeds from the Internet
+            fetchSourcesFromCoreData()
+            fetchRssFeeds()
+            
+        }
     }
     
     func fetchSourcesFromCoreData() {
