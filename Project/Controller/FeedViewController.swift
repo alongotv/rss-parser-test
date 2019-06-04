@@ -28,6 +28,9 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
         return rssFeeds.count
     }
     
+    /// CoreDataInstanceDelegate callback: required to update data in the collection view based on the user actions
+    ///
+    /// - Parameter index: index of of item in array that was added or removed
     func coreDataContentsDidChange(with index: Int) {
         
         fetchSourcesFromCoreData()
