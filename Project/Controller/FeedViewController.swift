@@ -12,10 +12,10 @@ import FeedKit
 
 class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
     
-   private var sources = [RssSource]()
-   private var rssFeeds = [RSSFeed]()
-   private let coreDataRepository = Persistence()
-   private let feedClient = FeedClient()
+    private var sources = [RssSource]()
+    private var rssFeeds = [RSSFeed]()
+    private let coreDataRepository = Persistence()
+    private let feedClient = FeedClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
                 let selectedNewsItem = newsItem
                 controller.newsItem = selectedNewsItem
             }
-        break
+            break
         case "feedViewControllerToRssSourcesViewController":
             let controller = segue.destination as! RssSourcesViewController
             controller.coreDataDelegate = self
