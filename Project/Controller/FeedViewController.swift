@@ -98,11 +98,13 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
         case "newsItemCellToNewsItemViewController":
             let controller = segue.destination as! NewsItemViewController
             
-            if let indexPath = self.collectionView.indexPathsForSelectedItems {
-                let newsItem = rssFeeds[indexPath[0].section].items![indexPath[0].item]
+            guard let selectedCollectionViewCell = sender as? RssCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: selectedCollectionViewCell) else { preconditionFailure("Expected sender to be a valid table view cell") }
+            
+                let newsItem = rssFeeds[indexPath.section].items![indexPath.item]
                 let selectedNewsItem = newsItem
                 controller.newsItem = selectedNewsItem
-            }
+            
             break
         case "feedViewControllerToRssSourcesViewController":
             let controller = segue.destination as! RssSourcesViewController
