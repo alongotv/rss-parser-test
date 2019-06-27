@@ -30,20 +30,21 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
     /// CoreDataInstanceDelegate callback: required to update data in the collection view based on the user actions
     ///
     /// - Parameter index: index of of item in array that was added or removed
-    func coreDataContentsDidChange(with index: Int) {
-        
-        if sources.count - 1 >= index { // If index variable is smaller than index of the last element in the rssFeeds array, we should remove one RSSFeed from the array
+    func coreDataContentsDidChange(with index: Int, action: ActionType) {
+        if action == ActionType.ADD {
+            sources.removeAll()
+            rssFeeds.removeAll()
+            
+            fetchSourcesFromCoreData()
+            fetchRssFeeds()
+        } else {
             sources.remove(at: index)
             rssFeeds.remove(at: index)
             
             collectionView.deleteItems(at: [IndexPath.init(indexes: [index])])
             collectionView.reloadData()
-            
-        } else {    // User added more sources, update RssSource array from CoreData and then fetch new RSS Feeds from the Internet
-            fetchSourcesFromCoreData()
-            fetchRssFeeds()
-            
         }
+        
     }
     
     func fetchSourcesFromCoreData() {
@@ -70,7 +71,7 @@ class FeedViewController: UICollectionViewController, CoreDataInstanceDelegate {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
+
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader {
             sectionHeader.sectionHeaderLabel.text = sources[indexPath.section].sourceName
             return sectionHeader

@@ -9,5 +9,10 @@
 import Foundation
 
 protocol CoreDataInstanceDelegate {
-    func coreDataContentsDidChange(with index: Int)
+    func coreDataContentsDidChange(with index: Int, action: ActionType)
+}
+
+enum ActionType: Int {
+    case ADD
+    case DELETE
 }
