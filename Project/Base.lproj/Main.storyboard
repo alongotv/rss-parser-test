@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="323" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-P8-VHq">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-P8-VHq">
                                             <rect key="frame" x="0.0" y="0.0" width="323" height="100"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -41,12 +41,14 @@
                                         </label>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ayE-P8-VHq" firstAttribute="top" secondItem="RkK-eI-5ab" secondAttribute="top" id="8tz-w8-RZ6"/>
                                     <constraint firstItem="ayE-P8-VHq" firstAttribute="leading" secondItem="RkK-eI-5ab" secondAttribute="leading" id="IZc-LA-TWx"/>
-                                    <constraint firstAttribute="bottom" secondItem="ayE-P8-VHq" secondAttribute="bottom" id="WBX-fJ-LxV"/>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="top" secondItem="RkK-eI-5ab" secondAttribute="top" id="Mwr-5a-sVk"/>
+                                    <constraint firstAttribute="trailing" secondItem="ayE-P8-VHq" secondAttribute="trailing" id="Yf4-JQ-o7y"/>
                                     <constraint firstAttribute="trailing" secondItem="ayE-P8-VHq" secondAttribute="trailing" id="fAU-fE-RPL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ayE-P8-VHq" secondAttribute="bottom" id="fbM-YA-5Z4"/>
+                                    <constraint firstItem="ayE-P8-VHq" firstAttribute="leading" secondItem="RkK-eI-5ab" secondAttribute="leading" id="rUD-rg-QXg"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="cellTitle" destination="ayE-P8-VHq" id="9I7-JG-VQ2"/>
@@ -65,7 +67,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="G4M-A0-6yP" firstAttribute="top" secondItem="BLK-Sa-UpR" secondAttribute="top" id="4w6-8P-vpl"/>
                                 <constraint firstAttribute="bottom" secondItem="G4M-A0-6yP" secondAttribute="bottom" id="i2V-fM-RYW"/>
